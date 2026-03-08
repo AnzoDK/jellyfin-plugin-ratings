@@ -9,6 +9,22 @@
     "imageUrl": "https://raw.githubusercontent.com/K3ntas/jellyfin-plugin-ratings/main/images/logo.png",
     "versions": [
       {
+        "version": "1.0.312.2",
+        "changelog": "Added button for not overriding the sync button - Full bugfixed Release",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/AnzoDK/jellyfin-plugin-ratings/releases/download/v1.0.312.2/jellyfin-plugin-ratings_1.0.312.2-Prerelease.zip",
+        "checksum": "4b428e0780f51df2be0bffc60103eac4",
+        "timestamp": "2026-03-08T16:00:00Z"
+      },
+      {
+        "version": "1.0.312.1",
+        "changelog": "Added button for not overriding the sync button",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/AnzoDK/jellyfin-plugin-ratings/releases/download/v1.0.312.1-Prerelease/jellyfin-plugin-ratings_1.0.312.1-Prerelease.zip",
+        "checksum": "5d11acb503efca079a74c4a20f2c9033",
+        "timestamp": "2026-03-08T14:00:00Z"
+      },
+      {
         "version": "1.0.312.0",
         "changelog": "Genre sorting, lazy loading, Leaving Soon tab, notification badges, mobile spacing fixes",
         "targetAbi": "10.11.0.0",
