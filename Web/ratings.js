@@ -1060,6 +1060,9 @@
             // Load EnableRatings flag from config (with retry for ApiClient)
             this.loadRatingsEnabledFlag();
 
+            // Load other flags from config (With retry)
+            this.loadInitialFlagsWithRetry();
+
             // Initialize chat feature
             this.initChatWithRetry();
 
@@ -1123,6 +1126,34 @@
                     .catch(function () {
                         // Default to enabled on error
                         self.ratingsEnabled = true;
+                    });
+            };
+
+            setTimeout(tryLoad, 500);
+        },
+
+
+        loadInitialFlagsWithRetry: function () {
+            const self = this;
+            var attempts = 0;
+
+            var tryLoad = function () {
+                attempts++;
+                if (!window.ApiClient) {
+                    if (attempts < 15) {
+                        setTimeout(tryLoad, 1000);
+                    }
+                    return;
+                }
+                var baseUrl = ApiClient.serverAddress();
+                fetch(baseUrl + '/Ratings/Config', { method: 'GET', credentials: 'include' })
+                    .then(function (r) { return r.json(); })
+                    .then(function (config) {
+                        self.requestsDoPulsing = config.RequestsDoPulsing !== false;
+                    })
+                    .catch(function () {
+                        // Default to disabled on error
+                        self.requestsDoPulsing = false;
                     });
             };
 
