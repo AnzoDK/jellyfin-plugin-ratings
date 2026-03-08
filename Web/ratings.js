@@ -1032,7 +1032,7 @@
             // Initialize notification toggle in header
             this.initNotificationToggle();
 
-            // Initialize latest media button (replaces sync play)
+            // Initialize latest media button (replaces sync play if override has not been disabled)
             this.initLatestMediaButton();
 
             // Initialize responsive scaling
@@ -9297,15 +9297,15 @@
                             if (config.ShowLatestMediaButton === false) {
                                 return; // Don't create button
                             }
-                            createLatestMediaButton();
+                            createLatestMediaButton(config.DoNotOverrideSyncPlay);
                         })
                         .catch(() => {
                             // Default to showing if config fails
-                            createLatestMediaButton();
+                            createLatestMediaButton(true);
                         });
                 };
 
-                const createLatestMediaButton = () => {
+                const createLatestMediaButton = (doNotOverride) => {
                     try {
                         // Check if already exists
                         if (document.getElementById('latestMediaBtn')) {
@@ -9315,7 +9315,10 @@
                         // Find and hide the Sync Play button
                         const syncPlayBtn = document.querySelector('.headerSyncButton');
                         if (syncPlayBtn) {
-                            syncPlayBtn.style.display = 'none';
+                            if(!doNotOverride)
+                            {
+                            	syncPlayBtn.style.display = 'none';
+                            }
                         }
 
                         // Create the latest media button
