@@ -28,6 +28,7 @@ namespace Jellyfin.Plugin.Ratings.Configuration
             //Overrides syncplay
             ShowLatestMediaButton = true;
             DoNotOverrideSyncPlay = true;
+            RequestMediaAnimations = true;
 
             // Media management settings
             EnableMediaManagement = true;
@@ -126,6 +127,11 @@ namespace Jellyfin.Plugin.Ratings.Configuration
         /// Gets or sets a value indicating whether the Request Media button is shown.
         /// </summary>
         public bool EnableRequestButton { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the request media button animations are enabled.
+        /// </summary>
+        public bool RequestMediaAnimations { get; set;} 
 
         /// <summary>
         /// Gets or sets a value indicating whether new media notifications are enabled.

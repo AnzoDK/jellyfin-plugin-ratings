@@ -10,6 +10,9 @@
 *.userosscache
 *.sln.docstates
 
+# .sln's are not used for this project
+*.sln
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

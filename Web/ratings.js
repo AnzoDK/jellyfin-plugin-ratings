@@ -12,6 +12,7 @@
         validLanguages: ['en', 'es', 'zh', 'pt', 'ru', 'ja', 'de', 'fr', 'ko', 'it', 'tr', 'pl', 'nl', 'ar', 'hi', 'lt'], // Supported languages
         badgeDisplayProfiles: [], // Resolution-based badge display profiles
         ratingsEnabled: true, // Whether ratings feature is enabled (loaded from config)
+        requestsDoPulsing: true, //Whether the media request buttion should be pulsing
 
         // Chat state
         chatEnabled: false, // Whether chat feature is enabled (loaded from config)
@@ -1204,7 +1205,7 @@
             if (document.getElementById('ratingsPluginStyles')) {
                 return;
             }
-
+            
             const styles = `
                 .ratings-plugin-ribbon-anchor {
                     position: relative;
@@ -1433,11 +1434,12 @@
                     cursor: pointer !important;
                     z-index: 999999 !important;
                     transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease !important;
-                    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+                    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;`+(this.requestsDoPulsing ? `
                     -webkit-animation: pulseButton 2s ease-in-out infinite !important;
                     -moz-animation: pulseButton 2s ease-in-out infinite !important;
                     -o-animation: pulseButton 2s ease-in-out infinite !important;
-                    animation: pulseButton 2s ease-in-out infinite !important;
+                    animation: pulseButton 2s ease-in-out infinite !important;` : ''
+                    )+`
                 }
 
                 #requestMediaBtn .btn-text {

@@ -138,6 +138,16 @@
 
                             <div class="checkboxContainer checkboxContainer-withDescription">
                                 <label class="emby-checkbox-label">
+                                    <input id="chkEnableRequestButtonAnimations" type="checkbox" is="emby-checkbox" />
+                                    <span>Enable Request Media Button Animations</span>
+                                </label>
+                                <div class="fieldDescription checkboxFieldDescription">
+                                    Show the pulse animations on the "Request Media Button"
+                                </div>
+                            </div>
+
+                            <div class="checkboxContainer checkboxContainer-withDescription">
+                                <label class="emby-checkbox-label">
                                     <input id="chkShowSearchButton" type="checkbox" is="emby-checkbox" />
                                     <span>Show Search Button</span>
                                 </label>
@@ -1047,6 +1057,7 @@
                     // UI toggles
                     document.querySelector('#selectDefaultLanguage').value = config.DefaultLanguage || 'en';
                     document.querySelector('#chkEnableRequestButton').checked = config.EnableRequestButton;
+                    document.querySelector('#chkEnableRequestButtonAnimations').checked = config.EnableRequestButton;
                     document.querySelector('#chkEnableNewMediaNotifications').checked = config.EnableNewMediaNotifications;
                     document.querySelector('#chkEnableEpisodeGrouping').checked = config.EnableEpisodeGrouping;
                     document.querySelector('#chkShowSearchButton').checked = config.ShowSearchButton;
