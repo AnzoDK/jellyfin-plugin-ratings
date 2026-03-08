@@ -540,6 +540,7 @@ namespace Jellyfin.Plugin.Ratings.Api
                     ShowSearchButton = config?.ShowSearchButton ?? true,
                     ShowNotificationToggle = config?.ShowNotificationToggle ?? true,
                     ShowLatestMediaButton = config?.ShowLatestMediaButton ?? true,
+                    DoNotOverrideSyncPlay = config?.DoNotOverrideSyncPlay ?? true,
 
                     // Media management settings
                     EnableMediaManagement = config?.EnableMediaManagement ?? true,
