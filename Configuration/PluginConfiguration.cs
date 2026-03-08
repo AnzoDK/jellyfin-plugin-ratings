@@ -25,7 +25,9 @@ namespace Jellyfin.Plugin.Ratings.Configuration
             ShowLanguageSwitch = true;
             ShowSearchButton = true;
             ShowNotificationToggle = true;
+            //Overrides syncplay
             ShowLatestMediaButton = true;
+            DoNotOverrideSyncPlay = true;
 
             // Media management settings
             EnableMediaManagement = true;
