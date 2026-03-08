@@ -175,6 +175,16 @@
                                     Replace the Sync Play button with a Latest Media button that shows the 50 most recently added items.
                                 </div>
                             </div>
+                            
+                            <div class="checkboxContainer checkboxContainer-withDescription">
+                                <label class="emby-checkbox-label">
+                                    <input id="chkDoNotOverrideSyncPlay" type="checkbox" is="emby-checkbox" />
+                                    <span>Show Latest Media Button</span>
+                                </label>
+                                <div class="fieldDescription checkboxFieldDescription">
+                                    Keeps the SyncPlay button, even when the latest media button is shown. This might cause the topbar to be very cluttered.
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -1043,6 +1053,7 @@
                     document.querySelector('#chkShowLanguageSwitch').checked = config.ShowLanguageSwitch;
                     document.querySelector('#chkShowNotificationToggle').checked = config.ShowNotificationToggle !== false;
                     document.querySelector('#chkShowLatestMediaButton').checked = config.ShowLatestMediaButton !== false;
+                    document.querySelector('#chkDoNotOverrideSyncPlay').checked = config.DoNotOverrideSyncPlay !== false;
 
                     // Media management settings
                     document.querySelector('#chkEnableMediaManagement').checked = config.EnableMediaManagement !== false;
