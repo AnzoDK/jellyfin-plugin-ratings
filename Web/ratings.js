@@ -1020,6 +1020,9 @@
                     .catch(function () { /* Use default 'en' */ });
             }
 
+            // Load other flags from config (With retry)
+            this.loadInitialFlagsWithRetry();
+
             this.injectStyles();
             this.observeDetailPages();
             this.observeHomePageCards();
@@ -1059,9 +1062,6 @@
 
             // Load EnableRatings flag from config (with retry for ApiClient)
             this.loadRatingsEnabledFlag();
-
-            // Load other flags from config (With retry)
-            this.loadInitialFlagsWithRetry();
 
             // Initialize chat feature
             this.initChatWithRetry();
