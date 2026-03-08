@@ -9416,8 +9416,9 @@
                                     syncBtn.style.display = 'none';
                                }
                             });
+                            observer.observe(document.body, { childList: true, subtree: true });
                         }
-                        observer.observe(document.body, { childList: true, subtree: true });
+                        
 
                         // Hide during video playback and on login page
                         setInterval(() => {
