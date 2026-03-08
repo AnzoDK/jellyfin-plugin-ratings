@@ -158,6 +158,13 @@ namespace Jellyfin.Plugin.Ratings.Configuration
         /// Replaces the Sync Play button with a dropdown showing 50 most recently added media items.
         /// </summary>
         public bool ShowLatestMediaButton { get; set; }
+        
+        
+        /// <summary>
+        /// Gets or sets whether the sync button should be overriden or not, while still showing the LatestMediaButton.
+        /// Some users make extensive use of syncplay, and really needes the button.
+        /// </summary>
+        public bool DoNotOverrideSyncPlay { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the Media Management feature is enabled for admins.
