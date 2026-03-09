@@ -2,7 +2,7 @@
  * Jellyfin Ratings Plugin - Client-side component
  */
 
-(function () {
+(async function () {
     'use strict';
 
     const RatingsPlugin = {
@@ -1000,7 +1000,7 @@
         /**
          * Initialize the ratings plugin
          */
-        init: function () {
+        async init() {
             var self = this;
 
             // Load saved language preference or fetch from server config
@@ -1021,9 +1021,9 @@
             }
 
             // Load other flags from config (With retry)
-            this.loadInitialFlagsWithRetry();
+            await this.loadInitialFlags();
 
-            this.injectStyles();
+            
             this.observeDetailPages();
             this.observeHomePageCards();
 
@@ -1133,31 +1133,19 @@
         },
 
 
-        loadInitialFlagsWithRetry: function () {
+        async loadInitialFlags () {
             const self = this;
-            var attempts = 0;
-
-            var tryLoad = function () {
-                attempts++;
-                if (!window.ApiClient) {
-                    if (attempts < 15) {
-                        setTimeout(tryLoad, 1000);
-                    }
-                    return;
-                }
-                var baseUrl = ApiClient.serverAddress();
-                fetch(baseUrl + '/Ratings/Config', { method: 'GET', credentials: 'include' })
+            var baseUrl = ApiClient.serverAddress();
+                await fetch(baseUrl + '/Ratings/Config', { method: 'GET', credentials: 'include' })
                     .then(function (r) { return r.json(); })
                     .then(function (config) {
-                        self.requestsDoPulsing = config.RequestsDoPulsing !== false;
+                        self.requestsDoPulsing = config.RequestMediaAnimations !== false;
                     })
                     .catch(function () {
                         // Default to disabled on error
                         self.requestsDoPulsing = false;
                     });
-            };
-
-            setTimeout(tryLoad, 500);
+                this.injectStyles();
         },
 
         /**

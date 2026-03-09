@@ -1057,7 +1057,7 @@
                     // UI toggles
                     document.querySelector('#selectDefaultLanguage').value = config.DefaultLanguage || 'en';
                     document.querySelector('#chkEnableRequestButton').checked = config.EnableRequestButton;
-                    document.querySelector('#chkEnableRequestButtonAnimations').checked = config.EnableRequestButton;
+                    document.querySelector('#chkEnableRequestButtonAnimations').checked = config.RequestMediaAnimations;
                     document.querySelector('#chkEnableNewMediaNotifications').checked = config.EnableNewMediaNotifications;
                     document.querySelector('#chkEnableEpisodeGrouping').checked = config.EnableEpisodeGrouping;
                     document.querySelector('#chkShowSearchButton').checked = config.ShowSearchButton;
@@ -1156,12 +1156,15 @@
                     // UI toggles
                     config.DefaultLanguage = document.querySelector('#selectDefaultLanguage').value;
                     config.EnableRequestButton = document.querySelector('#chkEnableRequestButton').checked;
+                    config.RequestMediaAnimations = document.querySelector('#chkEnableRequestButtonAnimations').checked;
                     config.EnableNewMediaNotifications = document.querySelector('#chkEnableNewMediaNotifications').checked;
                     config.EnableEpisodeGrouping = document.querySelector('#chkEnableEpisodeGrouping').checked;
                     config.ShowSearchButton = document.querySelector('#chkShowSearchButton').checked;
                     config.ShowLanguageSwitch = document.querySelector('#chkShowLanguageSwitch').checked;
                     config.ShowNotificationToggle = document.querySelector('#chkShowNotificationToggle').checked;
                     config.ShowLatestMediaButton = document.querySelector('#chkShowLatestMediaButton').checked;
+                    config.DoNotOverrideSyncPlay = document.querySelector('#chkDoNotOverrideSyncPlay').checked;
+                    
 
                     // Media management settings
                     config.EnableMediaManagement = document.querySelector('#chkEnableMediaManagement').checked;
