@@ -11,7 +11,7 @@
         currentLanguage: 'en', // Default language
         validLanguages: ['en', 'es', 'zh', 'pt', 'ru', 'ja', 'de', 'fr', 'ko', 'it', 'tr', 'pl', 'nl', 'ar', 'hi', 'lt'], // Supported languages
         badgeDisplayProfiles: [], // Resolution-based badge display profiles
-        ratingsEnabled: true, // Whether ratings feature is enabled (loaded from config)
+        ratingsEnabled: false, // Whether ratings feature is enabled (loaded from config)
         requestsDoPulsing: true, //Whether the media request buttion should be pulsing
 
         // Chat state
@@ -1140,10 +1140,12 @@
                     .then(function (r) { return r.json(); })
                     .then(function (config) {
                         self.requestsDoPulsing = config.RequestMediaAnimations !== false;
+                        self.ratingsEnabled = config.EnableRatings !== false;
                     })
                     .catch(function () {
                         // Default to disabled on error
                         self.requestsDoPulsing = false;
+                        self.ratingsEnabled = false;
                     });
                 this.injectStyles();
         },
@@ -7828,7 +7830,10 @@
 
                 if (detailRibbon) {
                     clearInterval(checkInterval);
-                    self.injectRatingComponent(itemId);
+                    if(self.ratingsEnabled)
+                    {
+                        self.injectRatingComponent(itemId);
+                    }
                 } else if (attempts >= maxAttempts) {
                     // Give up after max attempts
                     clearInterval(checkInterval);
