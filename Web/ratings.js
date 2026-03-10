@@ -1535,7 +1535,7 @@
                 #requestMediaBtn:hover {
                     background: rgba(70, 70, 70, 0.95) !important;
                     border-color: rgba(255, 255, 255, 0.3) !important;
-                    transform: scale(1.05) !important;
+                    /*transform: scale(1.05) !important;*/
                 }
 
                 #requestMediaBtn.hidden {
@@ -1588,7 +1588,7 @@
 
                 /* Notification Badge */
                 .request-badge {
-                    position: absolute !important;
+                    /*position: absolute!important;*/
                     top: -8px !important;
                     right: -8px !important;
                     background: #ff4444 !important;
@@ -8603,7 +8603,7 @@
                 // Create button with position relative for badge
                 const btn = document.createElement('button');
                 btn.id = 'requestMediaBtn';
-                btn.style.position = 'relative';
+                //btn.style.position = 'relative';
                 btn.innerHTML = '<span class="btn-text">' + self.t('requestMedia') + '</span>';
                 btn.setAttribute('type', 'button');
                 btn.setAttribute('data-tooltip', 'Request movies or TV series from admin');
@@ -8629,7 +8629,7 @@
                 const headerContainer = document.querySelector('.headerRight');
                 if (headerContainer) {
                     // Make header container position relative so absolute positioning works
-                    headerContainer.style.position = 'relative';
+                    // headerContainer.style.position = 'relative';
                     headerContainer.insertBefore(btn, headerContainer.firstChild);
                 } else {
                     document.body.appendChild(btn);
