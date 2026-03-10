@@ -1441,7 +1441,7 @@
 
                 /* Request Media Button - Aligned with Header */
                 #requestMediaBtn {
-                    position: absolute !important;
+                    /*position: absolute !important;*/
                     top: 8px;
                     right: 240px !important;
                     background: rgba(60, 60, 60, 0.9) !important;
@@ -1639,7 +1639,7 @@
 
                 /* Search Field in Header */
                 #headerSearchField {
-                    position: absolute !important;
+                    /*position: absolute !important;*/
                     top: 8px;
                     right: 480px !important;
                     z-index: 999998 !important;
@@ -1681,7 +1681,7 @@
                     color: #fff !important;
                     font-size: 14px !important;
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-                    width: 200px !important;
+                    min-width: 120px !important;
                     padding: 4px 0 !important;
                     -webkit-appearance: none !important;
                     -moz-appearance: none !important;
@@ -8626,7 +8626,7 @@
                 `;
 
                 // Add to DOM - append to header container so they scroll with header
-                const headerContainer = document.querySelector('.headerTabs, .skinHeader');
+                const headerContainer = document.querySelector('.headerLeft');
                 if (headerContainer) {
                     // Make header container position relative so absolute positioning works
                     headerContainer.style.position = 'relative';
@@ -8941,7 +8941,7 @@
                         searchContainer.appendChild(searchInput);
 
                         // Append to header container so it scrolls with header
-                        const headerContainer = document.querySelector('.headerTabs, .skinHeader');
+                        const headerContainer = document.querySelector('.headerLeft');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
                             headerContainer.appendChild(searchContainer);
@@ -9249,7 +9249,7 @@
                         });
 
                         // Append to header container
-                        const headerContainer = document.querySelector('.headerTabs, .skinHeader');
+                        const headerContainer = document.querySelector('.headerLeft');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
                             headerContainer.appendChild(toggleContainer);
