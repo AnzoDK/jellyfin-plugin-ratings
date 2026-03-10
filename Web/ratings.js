@@ -1712,16 +1712,16 @@
                 /* Mobile Responsive for Search Field - Dynamic scaling handled by JavaScript */
                 @media screen and (max-width: 925px) {
                     #headerSearchField {
-                        display:none;
+                        display:none!important;
 
                     }
 
                     #headerSearchInput {
-                        display:none;
+                        display:none!important;
                     }
 
                     #headerSearchIcon {
-                        display:none;
+                        display:none!important;
                     }
                 }
 
@@ -4335,13 +4335,13 @@
                 }
 
                 #testNotificationBtn.hidden {
-                    display: none !important;
+                    display:none!important;
                 }
 
                 @media screen and (max-width: 925px) {
                     .ratings-notification-container
                     {
-                        display:none;
+                        display:none!important;
                     }
                     #testNotificationBtn {
                         display: none !important;
