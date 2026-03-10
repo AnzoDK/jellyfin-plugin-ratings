@@ -1546,6 +1546,10 @@
 
                 /* Mobile Responsive - Dynamic scaling handled by JavaScript */
                 @media screen and (max-width: 925px) {
+                #requestMediaBtn
+                {
+                    display:none!important;
+                }
                     .headerRight {
                         
                     }
