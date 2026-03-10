@@ -8626,7 +8626,7 @@
                 `;
 
                 // Add to DOM - append to header container so they scroll with header
-                const headerContainer = document.querySelector('.headerLeft');
+                const headerContainer = document.querySelector('.headerRight');
                 if (headerContainer) {
                     // Make header container position relative so absolute positioning works
                     headerContainer.style.position = 'relative';
@@ -8941,7 +8941,7 @@
                         searchContainer.appendChild(searchInput);
 
                         // Append to header container so it scrolls with header
-                        const headerContainer = document.querySelector('.headerLeft');
+                        const headerContainer = document.querySelector('.headerRight');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
                             headerContainer.appendChild(searchContainer);
@@ -9249,7 +9249,7 @@
                         });
 
                         // Append to header container
-                        const headerContainer = document.querySelector('.headerLeft');
+                        const headerContainer = document.querySelector('.headerRight');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
                             headerContainer.appendChild(toggleContainer);
