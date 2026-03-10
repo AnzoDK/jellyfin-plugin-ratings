@@ -1561,6 +1561,7 @@
                         font-size: 16px !important;
                         border-radius: 55px !important;
                         right: 6px !important;
+                        display:none!important;
                     }
 
                     #requestMediaBtn .btn-text {
