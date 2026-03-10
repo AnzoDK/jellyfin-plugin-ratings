@@ -1717,13 +1717,11 @@
                     }
 
                     #headerSearchInput {
-                        width: 100px !important;
-                        font-size: 14px !important;
+                        display:none;
                     }
 
                     #headerSearchIcon {
-                        font-size: 18px !important;
-                        margin-right: 8px !important;
+                        display:none;
                     }
                 }
 
@@ -1830,12 +1828,11 @@
                     }
 
                     #searchDropdown .dropdown-item-image {
-                        width: 40px !important;
-                        height: 58px !important;
+                        display:none;
                     }
 
                     #searchDropdown .dropdown-item-title {
-                        font-size: 13px !important;
+                        display:none;
                     }
                 }
 
@@ -4342,6 +4339,10 @@
                 }
 
                 @media screen and (max-width: 925px) {
+                    .ratings-notification-container
+                    {
+                        display:none;
+                    }
                     #testNotificationBtn {
                         display: none !important;
                     }
