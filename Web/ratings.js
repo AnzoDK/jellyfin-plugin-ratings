@@ -1546,9 +1546,8 @@
 
                 /* Mobile Responsive - Dynamic scaling handled by JavaScript */
                 @media screen and (max-width: 925px) {
-                    /* Reduce spacing between header buttons on mobile */
                     .headerRight {
-                        gap: 2px !important;
+                        
                     }
 
                     .headerRight > button,
@@ -1713,9 +1712,8 @@
                 /* Mobile Responsive for Search Field - Dynamic scaling handled by JavaScript */
                 @media screen and (max-width: 925px) {
                     #headerSearchField {
-                        left: 6px !important;
-                        right: auto !important;
-                        padding: 8px 16px !important;
+                        display:none;
+
                     }
 
                     #headerSearchInput {
@@ -1828,10 +1826,7 @@
 
                 @media screen and (max-width: 925px) {
                     #searchDropdown {
-                        min-width: 280px !important;
-                        max-width: 320px !important;
-                        left: 0 !important;
-                        right: auto !important;
+                        display:none;
                     }
 
                     #searchDropdown .dropdown-item-image {
@@ -1926,18 +1921,12 @@
                 /* Mobile Responsive for Notification Toggle - LEFT of Request button */
                 @media screen and (max-width: 925px) {
                     #notificationToggle {
-                        position: absolute !important;
-                        top: 60px !important;
-                        left: auto !important;
-                        right: 150px !important;
+
                     }
                 }
 
                 @media screen and (max-width: 590px) {
                     #notificationToggle {
-                        position: absolute !important;
-                        top: 62px !important;
-                        right: 130px !important;
                     }
 
                     #notificationToggleIcon {
@@ -1952,9 +1941,7 @@
 
                 @media screen and (max-width: 470px) {
                     #notificationToggle {
-                        position: absolute !important;
-                        top: 16px !important;
-                        right: 180px !important;
+
                     }
 
                     #notificationToggleIcon {
