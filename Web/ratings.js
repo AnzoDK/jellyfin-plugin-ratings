@@ -8630,7 +8630,7 @@
                 if (headerContainer) {
                     // Make header container position relative so absolute positioning works
                     headerContainer.style.position = 'relative';
-                    headerContainer.appendChild(btn);
+                    headerContainer.insertBefore(btn, headerContainer.firstChild);
                 } else {
                     document.body.appendChild(btn);
                 }
@@ -8944,7 +8944,7 @@
                         const headerContainer = document.querySelector('.headerRight');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
-                            headerContainer.appendChild(searchContainer);
+                            headerContainer.insertBefore(searchContainer, headerContainer.firstChild);
                         } else {
                             document.body.appendChild(searchContainer);
                         }
@@ -9252,7 +9252,7 @@
                         const headerContainer = document.querySelector('.headerRight');
                         if (headerContainer) {
                             headerContainer.style.position = 'relative';
-                            headerContainer.appendChild(toggleContainer);
+                            headerContainer.insertBefore(toggleContainer, headerContainer.firstChild);
                         } else {
                             document.body.appendChild(toggleContainer);
                         }
