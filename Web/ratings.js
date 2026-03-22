@@ -8601,6 +8601,7 @@
                 // Create button with position relative for badge
                 const btn = document.createElement('button');
                 btn.classList.add("headerButton","headerButtonRight", "paper-icon-button-light");
+                btn.title = "Request movies or TV series from admin";
                 btn.id = 'requestMediaBtn';
                 //btn.style.position = 'relative';
                 btn.innerHTML = '<span class="material-icons email">'+'</span>';
