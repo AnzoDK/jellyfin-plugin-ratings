@@ -845,7 +845,7 @@
             // Update button text
             const btnText = document.querySelector('#requestMediaBtn .btn-text');
             if (btnText) {
-                btnText.textContent = this.t('requestMedia');
+                //btnText.textContent = this.t('requestMedia');
             }
         },
 
@@ -1442,7 +1442,7 @@
                 }
 
                 /* Request Media Button - Aligned with Header */
-                #requestMediaBtn {
+                /*#requestMediaBtn*/ #requestMediaBtn_disabled{
                     /*position: absolute !important;*/
                     top: 8px;
                     right: 240px !important;
@@ -1463,7 +1463,7 @@
                     )+`
                 }
 
-                #requestMediaBtn .btn-text {
+                #requestMediaBtn_disabled .btn-text {
                     background: linear-gradient(to right, #9f9f9f 0%, #fff 10%, #868686 20%) !important;
                     background-size: 200% auto !important;
                     -webkit-background-clip: text !important;
@@ -1534,7 +1534,7 @@
                     }
                 }
 
-                #requestMediaBtn:hover {
+                #requestMediaBtn_disabled:hover {
                     background: rgba(70, 70, 70, 0.95) !important;
                     border-color: rgba(255, 255, 255, 0.3) !important;
                     /*transform: scale(1.05) !important;*/
@@ -8600,9 +8600,10 @@
 
                 // Create button with position relative for badge
                 const btn = document.createElement('button');
+                btn.classList.add("headerButton","headerButtonRight", "paper-icon-button-light");
                 btn.id = 'requestMediaBtn';
                 //btn.style.position = 'relative';
-                btn.innerHTML = '<span class="btn-text">' + self.t('requestMedia') + '</span>';
+                btn.innerHTML = '<span class="material-icons email">'+'</span>';
                 btn.setAttribute('type', 'button');
                 btn.setAttribute('data-tooltip', 'Request movies or TV series from admin');
 
@@ -14636,6 +14637,11 @@
                 if (!btn) return; // Still not found, exit silently
             }
             try {
+                this.checkIfAdmin().then((isAdmin) => {
+                    if(!isAdmin)
+                    {
+                        return;
+                    }
                 Promise.all([
                     this.fetchAllRequests(),
                     this.fetchDeletionRequests()
@@ -14650,6 +14656,7 @@
                             count += deletionRequests.filter(r => r.Status === 'pending').length;
                         } else {
                             // For users: show count of completed (done) requests they haven't seen yet
+                            
                             const userId = ApiClient.getCurrentUserId();
                             const userRequests = requests.filter(r => r.UserId === userId);
                             const doneRequests = userRequests.filter(r => r.Status === 'done');
@@ -14679,6 +14686,7 @@
                     });
                 }).catch(err => {
                     console.error('Error updating request badge:', err);
+                });
                 });
             } catch (err) {
                 console.error('Error in updateRequestBadge:', err);
